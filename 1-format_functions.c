@@ -29,7 +29,7 @@ void print_number(int n)
 	if (n < 0)
 	{
 		_putchar('-');
-		num = -n;
+		num = n * -1;
 	}
 	else
 		num = n;
@@ -51,6 +51,8 @@ int count_digits(int n)
 	unsigned int count = 0;
 	unsigned int u;
 
+	if (n == 0)
+		count = 1;
 	if (n < 0)
 	{
 		count++;
