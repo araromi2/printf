@@ -1,9 +1,8 @@
 #include "main.h"
-int print_number(int);
 
 /**
  * print_signed_number - prints a signed integer.
- * @n: args
+ * @args: args
  *
  * Return: number of character printed.
  */
@@ -18,7 +17,7 @@ int print_signed_number(va_list args)
 
 /**
  * print_number - prints an integer.
- * @num: integer
+ * @n: integer
  *
  * Return: count of integer
  */
@@ -29,8 +28,9 @@ int print_number(int n)
 
 	if (n < 0)
 	{
-		count += _putchar('-');
-		num  = -n;
+		_putchar('-');
+		num = -n;
+		count++;
 	}
 	else
 		num = n;

@@ -9,6 +9,7 @@
 int _putchar(char);
 int _printf(const char *format, ...);
 int print_char(va_list);
+int print_number(int);
 int print_string(va_list);
 int print_percent(va_list);
 int print_signed_number(va_list);
