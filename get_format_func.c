@@ -7,12 +7,11 @@
  *
  * Return: A pointer to the function that will print in the format specified
  */
-int (*get_format_func(char *s))(va_list)
+int (*get_format_func(char s))(va_list)
 {
 	format_t f_types[] = {
 		{'c', print_char},
-		{'s', print_string},
-		{NULL, NULL}
+		{'s', print_string}
 	};
 	int i;
 
