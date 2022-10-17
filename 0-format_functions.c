@@ -19,7 +19,13 @@ int print_char(va_list args)
  */
 int print_string(va_list args)
 {
+	int count = 0, i = 0;
 	char *str = va_arg(args, char *);
-	return(write(1, str, sizeof(str)));
+
+	while (str[i] != '\0')
+	{
+		count += _putchar(str[i++]);
+	}
+	return (count);
 }
 
