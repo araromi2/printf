@@ -21,6 +21,6 @@ typedef struct format_type
 {
 	char type;
 	int (*func)(va_list);
-}format_t;
+} format_t;
 
 #endif /* #ifndef _MAIN_H */

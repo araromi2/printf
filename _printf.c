@@ -4,14 +4,14 @@
  * _printf - printf function
  * @format: a character string composed of zero or more directives
  *
- * Return: the number of characters printed (excluding the null byte used to end
- * output to strings
+ * Return: the number of characters printed (excluding the null byte used to
+ * end output to strings
  */
 int _printf(const char *format, ...)
 {
 	va_list args;
 	int (*ftype)(va_list);
-	int i =0, count = 0;
+	int i = 0, count = 0;
 
 	va_start(args, format);
 	while (format[i] != '\0')
