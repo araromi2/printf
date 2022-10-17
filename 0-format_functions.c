@@ -33,7 +33,7 @@ int print_string(va_list args)
 
 /**
  * print_percent - print percent
- * @ args: list of arguments
+ * @args: list of arguments
  * Return: 1
  */
 int print_percent(va_list args)
