@@ -13,21 +13,24 @@ int _printf(const char *format, ...)
 	int (*ftype)(va_list);
 	int i = 0, count = 0;
 
+	if (format == NULL)
+		return (-1);
 	va_start(args, format);
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
-			i++;
-			if (format[i] == '%')
+			ftype = get_format_func(format[i + 1]);
+			if (ftype == NULL)
 			{
-				_putchar('%');
-				count++;
+				if (format[i + 1] == '\0')
+					return (-1);
+				count += _putchar(format[i]);
 			}
 			else
 			{
-				ftype = get_format_func(format[i]);
 				count += ftype(args);
+				i++;
 			}
 		}
 		else

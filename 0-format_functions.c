@@ -22,10 +22,25 @@ int print_string(va_list args)
 	int count = 0, i = 0;
 	char *str = va_arg(args, char *);
 
+	if (str == NULL)
+		str = "(null)";
 	while (str[i] != '\0')
 	{
 		count += _putchar(str[i++]);
 	}
 	return (count);
+}
+
+/**
+ * print_percent - print percent
+ * @ args: list of arguments
+ * Return: 1
+ */
+int print_percent(va_list args)
+{
+	(void)args;
+
+	_putchar('%');
+	return (1);
 }
 
