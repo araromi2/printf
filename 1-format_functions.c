@@ -11,7 +11,8 @@ int print_signed_number(va_list args)
 	int num;
 
 	num = va_arg(args, int);
-	return (print_number(num));
+	print_number(num);
+	return (count_digits(num));
 
 }
 
@@ -19,27 +20,45 @@ int print_signed_number(va_list args)
  * print_number - prints an integer.
  * @n: integer
  *
- * Return: count of integer
+ * Return: void
  */
-int print_number(int n)
+void print_number(int n)
 {
 	unsigned int num;
-	int count = 0;
 
 	if (n < 0)
 	{
 		_putchar('-');
 		num = -n;
-		count++;
 	}
 	else
 		num = n;
 	if (num / 10)
 	{
-		count += print_number(num / 10);
+		print_number(num / 10);
 	}
-	 _putchar((num % 10) + '0');
-	return (count);
+	_putchar((num % 10) + '0');
 
 }
 
+/**
+ * count_digits - counts the number of digits in a number
+ * @n: number to count
+ * Return: number of digits
+ */
+int count_digits(int n)
+{
+	int count = 0;
+
+	if (n < 0)
+	{
+		count++;
+		n = -n;
+	}
+	while (n > 0)
+	{
+		n /= 10;
+		count++;
+	}
+	return (count);
+}
