@@ -22,20 +22,23 @@ int print_signed_number(va_list args)
  *
  * Return: count of integer
  */
-int print_number(int num)
+int print_number(int n)
 {
+	unsigned int num;
 	int count = 0;
 
-	if (num < 0)
+	if (n < 0)
 	{
 		count += _putchar('-');
-		num  *= -1;
+		num  = -n;
 	}
+	else
+		num = n;
 	if (num / 10)
 	{
-		print_number(num / 10);
+		count += print_number(num / 10);
 	}
-	count += _putchar((num % 10) + '0');
+	 _putchar((num % 10) + '0');
 	return (count);
 
 }
