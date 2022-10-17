@@ -8,11 +8,11 @@
  */
 int print_signed_number(va_list args)
 {
-	int num;
+	int num = va_arg(args, int);
+	int count = count_digits(num);
 
-	num = va_arg(args, int);
 	print_number(num);
-	return (count_digits(num));
+	return (count);
 
 }
 
@@ -48,16 +48,19 @@ void print_number(int n)
  */
 int count_digits(int n)
 {
-	int count = 0;
+	unsigned int count = 0;
+	unsigned int u;
 
 	if (n < 0)
 	{
 		count++;
-		n = -n;
+		u = n * -1;
 	}
-	while (n > 0)
+	else
+		u = n;
+	while (u != 0)
 	{
-		n /= 10;
+		u /= 10;
 		count++;
 	}
 	return (count);
