@@ -12,14 +12,16 @@ int (*get_format_func(char s))(va_list)
 	format_t f_types[] = {
 		{'c', print_char},
 		{'s', print_string},
-		{'%', print_percent}
+		{'%', print_percent},
+		{'d', print_signed_number},
+		{'i', print_signed_number}
 	};
 	int i;
 
 	i = 0;
-	while (i < 3)
+	while (i < 5)
 	{
-		if (s == f_types[i].type)
+		if (f_types[i].type == s)
 			return (f_types[i].func);
 		i++;
 	}
