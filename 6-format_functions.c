@@ -9,10 +9,11 @@
 int print_pointer(va_list args)
 {
 	unsigned long int num;
-
 	int count = 0;
 
 	num = (unsigned long int)(va_arg(args, void *));
+	if (!num)
+		return (_puts("(nil)"));
 	count += _putchar('0');
 	count += _putchar('x');
 	count += print_hex(num);
