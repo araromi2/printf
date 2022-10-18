@@ -19,6 +19,7 @@ int print_unsigned_integer(va_list);
 int print_octal_num(va_list);
 int print_hex_small(va_list);
 int print_hex_large(va_list);
+int print_custom_string(va_list);
 int (*get_format_func(char s))(va_list);
 
 /**
