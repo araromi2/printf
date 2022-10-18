@@ -18,7 +18,7 @@ int print_signed_number(va_list);
 int print_unsigned_binary(va_list);
 int print_unsigned_integer(va_list);
 int print_octal_num(va_list);
-int print_hex(unsigned int);
+int print_hex(unsigned long int);
 int print_hex_small(va_list);
 int print_hex_large(va_list);
 int print_custom_string(va_list);

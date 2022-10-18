@@ -1,5 +1,4 @@
 #include "main.h"
-int print_hex(unsigned int);
 int print_HEX(unsigned int);
 
 /**
@@ -34,7 +33,7 @@ int print_hex_large(va_list args)
  *
  * Return: the count of bytes printed out
  */
-int print_hex(unsigned int num)
+int print_hex(unsigned long int num)
 {
 	int count = 0;
 

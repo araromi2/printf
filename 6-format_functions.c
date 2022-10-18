@@ -14,8 +14,7 @@ int print_pointer(va_list args)
 	num = (unsigned long int)(va_arg(args, void *));
 	if (!num)
 		return (_puts("(nil)"));
-	count += _putchar('0');
-	count += _putchar('x');
+	count += _puts("0x");
 	count += print_hex(num);
 	return (count);
 }
