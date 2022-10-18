@@ -1,5 +1,5 @@
 #include "main.h"
-int print_binary(unsigned int, unsigned int);
+int print_binary(unsigned int);
 
 /**
  * print_unsigned_binary - convert unsigned int argument to binary and print
@@ -11,7 +11,7 @@ int print_unsigned_binary(va_list args)
 {
 	unsigned int num = va_arg(args, unsigned int);
 
-	return (print_binary(num, 0));
+	return (print_binary(num));
 }
 
 /**
@@ -21,14 +21,13 @@ int print_unsigned_binary(va_list args)
  *
  * Return: the byte count
  */
-int print_binary(unsigned int num, unsigned int count)
+int print_binary(unsigned int num)
 {
-	if (num / 2)
-	{
-		count++;
-		count = print_binary(num / 2, count);
-	}
-	_putchar(num % 2 + '0');
+	int count = 0;
+
+	if (num  > 1)
+		count +=  print_binary(num >> 1);
+	count += _putchar((num & 1) + '0');
 	return (count);
 }
 
