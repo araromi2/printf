@@ -14,6 +14,7 @@ void print_number(int);
 int print_string(va_list);
 int print_percent(va_list);
 int print_signed_number(va_list);
+int print_unsigned_binary(va_list);
 int (*get_format_func(char s))(va_list);
 
 /**

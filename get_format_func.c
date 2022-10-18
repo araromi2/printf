@@ -14,12 +14,13 @@ int (*get_format_func(char s))(va_list)
 		{'s', print_string},
 		{'%', print_percent},
 		{'d', print_signed_number},
-		{'i', print_signed_number}
+		{'i', print_signed_number},
+		{'b', print_unsigned_binary}
 	};
 	int i;
 
 	i = 0;
-	while (i < 5)
+	while (i < 6)
 	{
 		if (f_types[i].type == s)
 			return (f_types[i].func);
