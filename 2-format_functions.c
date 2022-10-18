@@ -17,7 +17,6 @@ int print_unsigned_binary(va_list args)
 /**
  * print_binary - print converted integer (to binary)
  * @num: number
- * @count: count of bytes printed
  *
  * Return: the byte count
  */

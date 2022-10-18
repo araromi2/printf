@@ -24,6 +24,7 @@ int print_hex_small(va_list args)
 int print_hex_large(va_list args)
 {
 	unsigned int num = va_arg(args, unsigned int);
+
 	return (print_HEX(num));
 }
 
@@ -36,7 +37,7 @@ int print_hex_large(va_list args)
 int print_hex(unsigned int num)
 {
 	int count = 0;
-	
+
 	if (num / 16)
 		count += print_hex(num / 16);
 	if ((num % 16) < 10)

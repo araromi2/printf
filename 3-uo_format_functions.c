@@ -1,5 +1,5 @@
 #include "main.h"
-int print_unsigned(unsigned int);
+int print_notsigned_(unsigned int);
 int print_octal(unsigned int);
 
 /**
@@ -12,7 +12,7 @@ int print_unsigned_integer(va_list args)
 {
 	unsigned int num = va_arg(args, unsigned int);
 
-	return (print_unsigned(num));
+	return (print_notsigned_(num));
 }
 
 /**
@@ -29,24 +29,24 @@ int print_octal_num(va_list args)
 }
 
 /**
- * print_unsigned - print an unsigned number
+ * print_notsigned_ - print an unsigned number
  * @num: number passed in
  *
  * Return: number of bytes printed
  */
-int print_unsigned(unsigned int num)
+int print_notsigned_(unsigned int num)
 {
 	int count = 0;
 
 	if (num / 10)
-		count += print_unsigned(num / 10);
+		count += print_notsigned_(num / 10);
 	count += _putchar((num % 10) + '0');
 	return (count);
 }
 
 /**
  * print_octal - print octal conversion
- * @ num: unsigned number passed in
+ * @num: unsigned number passed in
  *
  * Return: the number of bytes printed to stdout
  */
