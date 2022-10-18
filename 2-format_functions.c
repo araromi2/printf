@@ -10,6 +10,7 @@ int print_binary(unsigned int, unsigned int);
 int print_unsigned_binary(va_list args)
 {
 	unsigned int num = va_arg(args, unsigned int);
+
 	return (print_binary(num, 0));
 }
 
@@ -31,4 +32,3 @@ int print_binary(unsigned int num, unsigned int count)
 	return (count);
 }
 
-	
