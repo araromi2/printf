@@ -7,6 +7,7 @@
 #include <stdio.h>
 
 int _putchar(char);
+int _puts(char *);
 int _printf(const char *format, ...);
 int count_digits(int);
 int print_char(va_list);
