@@ -15,12 +15,16 @@ int (*get_format_func(char s))(va_list)
 		{'%', print_percent},
 		{'d', print_signed_number},
 		{'i', print_signed_number},
-		{'b', print_unsigned_binary}
+		{'b', print_unsigned_binary},
+		{'u', print_unsigned_integer},
+		{'o', print_octal_num},
+		{'x', print_hex_small},
+		{'X', print_hex_large}
 	};
 	int i;
 
 	i = 0;
-	while (i < 6)
+	while (i < 10)
 	{
 		if (f_types[i].type == s)
 			return (f_types[i].func);
