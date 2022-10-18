@@ -22,12 +22,13 @@ int (*get_format_func(char s))(va_list)
 		{'X', print_hex_large},
 		{'S', print_custom_string},
 		{'p', print_pointer},
-		{'r', print_rev}
+		{'r', print_rev},
+		{'R', print_rot}
 	};
 	int i;
 
 	i = 0;
-	while (i < 13)
+	while (i < 14)
 	{
 		if (f_types[i].type == s)
 			return (f_types[i].func);
